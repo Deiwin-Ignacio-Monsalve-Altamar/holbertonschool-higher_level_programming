@@ -1,2 +1,3 @@
 #!/usr/bin/python3
-def print_last_digit(number):
+for letras in range(97, 123):
+    print("{:c}".format(letras), end='')
