@@ -3,10 +3,10 @@ from calculator_1 import add, sub, mul, div
 
 
 def calcular(argv):
-    num = len(argv)
+    num = len(argv) - 1
 
-    if num != 4:
-        print("{}".format("Usage: ./100-my_calculator.py <a> <operator> <b>"))
+    if num != 3:
+        print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         exit(1)
 
     a = int(argv[1])
@@ -15,11 +15,11 @@ def calcular(argv):
     if argv[2] == "+":
         print("{} + {} = {}".format(a, b, add(a, b)))
     elif argv[2] == "-":
-        print("{} + {} = {}".format(a, b, sub(a, b)))
+        print("{} - {} = {}".format(a, b, sub(a, b)))
     elif argv[2] == "*":
-        print("{} + {} = {}".format(a, b, mul(a, b)))
+        print("{} * {} = {}".format(a, b, mul(a, b)))
     elif argv[2] == "/":
-        print("{} + {} = {}".format(a, b, div(a, b)))
+        print("{} / {} = {}".format(a, b, div(a, b)))
     else:
         print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
