@@ -1,36 +1,28 @@
 #include <Python.h>
 #include <object.h>
+#include <listobject.h>
+#include <stdio.h>
 
 /**
- * print_python_list_info - print list
- * @p: PyObject
- * Return: 0
+ * print_python_list_info - Determine if is polindrome
+ * @p: list
+ * Return: void
  */
+
 void print_python_list_info(PyObject *p)
 {
-
-	long int len;
-	long int i = 0;
+	unsigned long aux = 0, length;
 	PyObject *item;
 
-	len = PyList_Size(p);
-	PyListObject *aux = (PyListObject *)p;
+	PyListObject *aux_object = (PyListObject *)p;
 
-	printf("[*] Size of the Python List = %li\n", len);
-	printf("[*] Allocated = %li\n", aux->allocated);
+	length = PyList_Size(p);
+	printf("[*] Size of the Python List = %li\n", length);
+	printf("[*] Allocated = %li\n", aux_object->allocated);
 
-	for (i = 0; i < len; i++)
+	for ( ; aux < length; aux++)
 	{
-		item = PyList_GetItem(p, i);
-		if (PyFloat_Check(item))
-			printf("Element %d: float\n", i);
-		if (PyTuple_Check(item))
-			printf("Element %d: tuple\n", i);
-		if (PyList_Check(item))
-			printf("Element %d: list\n", i);
-		if (PyLong_Check(item))
-			printf("Element %d: int\n", i);
-		if (PyUnicode_Check(item))
-			printf("Element %d: str\n", i);
+		item = PyList_GetItem(p, aux);
+		printf("Element %li: %s\n", aux, Py_TYPE(item)->tp_name);
 	}
 }
