@@ -6,8 +6,8 @@ def safe_print_list(my_list=[], x=0):
             if x > index:
                 print(num, end ="")
                 counter += 1
-        except IndexError:
-            return counter
+        except (ValueError, TypeError):
+            pass
     print()
     return counter
 
