@@ -1,6 +1,15 @@
 #!/usr/bin/python3
+
+
+"4-square.py class square defines a square"
+
+
 class Square:
+    """Class square"""
     def __init__(self, size=0):
+        """Inizialition of variables
+        Arg self identificador
+            size tamañe of square"""
         if type(size) is not int:
             raise TypeError("size must be an integer")
         elif size < 0:
@@ -10,9 +19,11 @@ class Square:
 
     @property
     def size(self):
-        return self.__sizes
+        """ Returns size"""
+        return self.__size
 
     @size.setter
+    """Set in the self.__size with value"""
     def size(self, value):
         if type(value) is not int:
             raise TypeError("size must be an integer")
@@ -22,4 +33,5 @@ class Square:
             self.__size = value
 
     def area(self):
+        """ Returns area the square"""
         return self.__size * self.__size
