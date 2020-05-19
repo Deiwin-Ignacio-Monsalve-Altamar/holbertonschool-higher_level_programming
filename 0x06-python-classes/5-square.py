@@ -5,11 +5,13 @@
 
 
 class Square:
-    """Class square"""
+    """Class square
+    """
     def __init__(self, size=0):
         """Inizialition of variables
         Arg self identificador
-            size tamañe of square"""
+        size tamañe of square
+        """
         if type(size) is not int:
             raise TypeError("size must be an integer")
         elif size < 0:
@@ -19,12 +21,14 @@ class Square:
 
     @property
     def size(self):
-        """ Returns size"""
+        """ Returns size
+        """
         return self.__size
 
     @size.setter
-    """Set in the self.__size with value"""
     def size(self, value):
+        """Set in the self.__size with value
+        """
         if type(value) is not int:
             raise TypeError("size must be an integer")
         elif value < 0:
@@ -33,11 +37,13 @@ class Square:
             self.__size = value
 
     def area(self):
-        """ Returns area the square"""
+        """ Returns area the square
+        """
         return self.__size * self.__size
 
     def my_print(self):
-        """Print square # """
+        """Print square #
+        """
         if self.__size == 0:
             print()
         for i in range(self.__size):
