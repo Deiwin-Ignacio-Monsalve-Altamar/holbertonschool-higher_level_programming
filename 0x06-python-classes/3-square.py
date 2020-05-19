@@ -5,11 +5,13 @@
 
 
 class Square:
-    """Class square"""
+    """Class square
+    """
     def __init__(self, size=0):
         """Inizialition of variables
         Arg self identificador
-            size tamañe of square"""
+        size tamañe of square
+        """
         if type(size) is not int:
             raise TypeError("size must be an integer")
         elif size < 0:
@@ -18,5 +20,6 @@ class Square:
             self.__size = size
 
     def area(self):
-        """ Returns area the square"""
+        """ Returns area the square
+        """
         return self.__size * self.__size
