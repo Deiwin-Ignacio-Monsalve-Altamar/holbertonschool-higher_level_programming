@@ -5,9 +5,11 @@
 
 
 class Square:
-    """Class square"""
+    """Class square
+    """
     def __init__(self, size):
         """Inizialition of variables
         Arg self identificador
-        size tamañe of square"""
+        size tamañe of square
+        """
         self.__size = size
