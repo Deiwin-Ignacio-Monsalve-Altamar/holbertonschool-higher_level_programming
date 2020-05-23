@@ -6,26 +6,15 @@ The ```5-text_indentation.py``` module
 Data
 # checks in data
 
->>> text_indentation("He could not live with his failure. Where did that lead you? \
-    Back to me I believed that by eliminating half of life, the other half \
-    would prosper. But they have determined that this is impossible. \
-    As long as there is someone who has in his memory what was, \
-    there will always be those who are unable to accept what can be: \
-    They will resist\n")
+>>> text_indentation("He could not live with his failure. Where did that lead you?")
 He could not live with his failure.
 <BLANKLINE>
 Where did that lead you?
 <BLANKLINE>
-Back to me I believed that by eliminating half of life, the other half     would prosper.
-<BLANKLINE>
-But they have determined that this is impossible.
-<BLANKLINE>
-As long as there is someone who has in his memory what was,     there will always be those who are unable to accept what can be:
-<BLANKLINE>
-They will resist
 
->>> stringdata = ":Hello.?beautiful:.world!"
->>> text_indentation(stringdata)
+>>> text_test = ":Hello.?beautiful:.world!"
+
+>>> text_indentation(text_test)
 :
 <BLANKLINE>
 Hello.
@@ -36,16 +25,8 @@ beautiful:
 <BLANKLINE>
 .
 <BLANKLINE>
+world!
 
->>>stringdata = "                      .split()            .split()        .split()"
->>> text_indentation(stringdata)
-.
-<BLANKLINE>
-split()            .
-<BLANKLINE>
-split()        .
-<BLANKLINE>
-split()
 
 Exception:
 
@@ -56,40 +37,3 @@ TypeError: text must be a string
 >>> text_indentation()
 Traceback (most recent call last):
 TypeError: text_indentation() missing 1 required positional argument: 'text'
-
->>> Book = {"Julian: 35", "Juan: 26", "Santiago:43", "Dave: 67"}
->>> text_indentation(Book)
-Traceback (most recent call last):
-TypeError: text must be a string
-
->>> text_indentation("Holberton", "Betty")
-Traceback (most recent call last):
-TypeError: text_indentation() takes 1 positional argument but 2 were given
-
->>> text_indentation("Hola como estas. el clima agradable? todo bien:")
-Hola como estas.
-<BLANKLINE>
-el clima agradable?
-<BLANKLINE>
-todo bien:
-<BLANKLINE>
-
-
-
->>> text_indentation("hola como estas")
-hola como estas
-
-
-
->>> text_indentation(234234)
-Traceback (most recent call last):
-...
-TypeError: text must be a string
-
-
-
->>> text_indentation()
-Traceback (most recent call last):
-...
-TypeError: text_indentation() missing 1 required positional argument: 'text'
-
