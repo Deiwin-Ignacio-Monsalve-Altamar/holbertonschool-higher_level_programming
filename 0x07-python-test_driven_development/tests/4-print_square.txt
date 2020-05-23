@@ -1,6 +1,6 @@
 The ```4-print_square.py``` module
 
-```Importing module matrix_divided```
+```Importing module```
 >>> print_square = __import__('4-print_square').print_square
 
 Data
