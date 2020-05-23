@@ -10,6 +10,10 @@ def matrix_divided(matrix, div):
     matriz: data in the array
     div: number a dividor
     """
+    if div == float('inf') or div == -float('inf'):
+        raise OverflowError("cannot convert float infinity to integer")
+    if div == float('NaN') or div != div:
+        raise ValueError("cannot convert float NaN to integer")
     for row in matrix:
         for number in row:
             if type(number) is not int and type(number) is not float:
