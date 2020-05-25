@@ -1,39 +1,40 @@
-The ```5-text_indentation.py``` module
-
-```Importing module```
->>> text_indentation = __import__('5-text_indentation').text_indentation
-
-Data
-# checks in data
-
->>> text_indentation("He could not live with his failure. Where did that lead you?")
-He could not live with his failure.
-<BLANKLINE>
-Where did that lead you?
-<BLANKLINE>
-
->>> text_test = ":Hello.?beautiful:.world!"
-
->>> text_indentation(text_test)
-:
-<BLANKLINE>
-Hello.
-<BLANKLINE>
-?
-<BLANKLINE>
-beautiful:
-<BLANKLINE>
-.
-<BLANKLINE>
-world!
-
-
-Exception:
-
->>> text_indentation(14)
-Traceback (most recent call last):
-TypeError: text must be a string
-
->>> text_indentation()
-Traceback (most recent call last):
-TypeError: text_indentation() missing 1 required positional argument: 'text'
+"Comment"
+IMPORT
+        >>> text_indentation = __import__('5-text_indentation').text_indentation
+ 
+CASES
+ 
+CHECK THE DATA TYPE
+Test 0: User sends an integer
+        >>> text_indentation(4)
+        Traceback (most recent call last):
+            ...
+        TypeError: text must be a string
+ 
+Test 1: User sends an float
+        >>> text_indentation(3.8)
+        Traceback (most recent call last):
+            ...
+        TypeError: text must be a string
+ 
+Test 2: Test a random text
+        >> text_1 = "Hello.?beautiful:.world!"
+        >>> text_indentation(text_1)
+        Hello.
+        <BLANKLINE>
+        ?
+        <BLANKLINE>
+        beautiful:
+        <BLANKLINE>
+        .
+        <BLANKLINE>
+        world!
+ 
+Test 3: User sends empty string
+        >>> text_indentation("")
+ 
+Test 3: User sends empty string
+        >>> text_indentation()
+        Traceback (most recent call last):
+            ...
+        TypeError: text_indentation() missing 1 required positional argument: 'text'
