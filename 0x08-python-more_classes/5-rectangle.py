@@ -57,7 +57,7 @@ class Rectangle:
         return new_string
 
     def __repr__(self):
-        return 'Rectangule({}. {})'.format(self.__width, self.__heigth)
+        return 'Rectangle({}. {})'.format(self.__width, self.__heigth)
 
     def __del__(self):
-        print("Bye rectangule...")
+        print("Bye rectangle...")
