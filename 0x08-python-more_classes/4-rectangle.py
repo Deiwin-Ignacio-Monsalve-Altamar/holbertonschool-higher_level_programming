@@ -54,8 +54,9 @@ class Rectangle:
         new_string = ''
         if self.__width == 0 or self.__heigth == 0:
             return new_string
-        for width in range(self.__heigth):
+        for width in range(self.__heigth - 1):
             new_string += ("#" * self.__width) + '\n'
+        new_string += ("#" * self.__width)
         return new_string
 
     def __repr__(self):
