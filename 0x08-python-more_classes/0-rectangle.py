@@ -3,5 +3,6 @@
 
 "0-rectangle.py print rectangle"
 
+
 class Rectangle:
     pass
