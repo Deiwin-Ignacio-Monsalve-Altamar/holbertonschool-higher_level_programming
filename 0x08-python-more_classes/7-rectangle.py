@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 
 
 "7-rectangle.py print rectangle"
@@ -57,8 +58,9 @@ class Rectangle:
             return new_string
         if type(self.print_symbol) is not str:
             self.print_symbol = str(self.print_symbol)
-        for width in range(self.__heigth):
+        for width in range(self.__heigth - 1):
             new_string += (self.print_symbol * self.__width) + '\n'
+        new_string += (self.print_symbol * self.__width)
         return new_string
 
     def __repr__(self):
