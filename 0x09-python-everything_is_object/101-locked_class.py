@@ -2,6 +2,7 @@
 """Class LockedClass
 """
 
+
 class LockedClass:
     """Stots mettods
     """
