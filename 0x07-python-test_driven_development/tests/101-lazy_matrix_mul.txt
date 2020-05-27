@@ -4,55 +4,75 @@
 >>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
 
 'Matrix of integers'
->>> lazy_matrix_mul([[3, 4], [6, 5]], [[8], [7]])
-array([[52]
-       [83]])
+>>> lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
+array([[ 7, 10],
+       [15, 22]])
 
-'Matrix of float'
->>> lazy_matrix_mul([[3.6, -4.5], [-6, 5.3]], [[-0.8], [1.7]])
-array([[-10.53],
-       [ 13.81]])
+#test_2
+>>> lazy_matrix_mul([[1, 2]], [[3, 4], [5, 6]])
+array([[13, 16]])
 
->>> lazy_matrix_mul((2, 5, 6), [[8, 7]])
+#test_4
+>>> lazy_matrix_mul([[1, 2, 3], [4, 5, 6]], [[1], [2], [3]])
+array([[14],
+       [32]])
+
+#test_5
+>>> lazy_matrix_mul([[1, 2], [3, 4]], [[5, 6], [7, 8]])
+array([[19, 22],
+       [43, 50]])
+
+
+>>> lazy_matrix_mul(" Holberton", [[5, 6], [7, 8]])
 Traceback (most recent call last):
-...
-ValueError: shapes (3,) and (1,2) not aligned: 3 (dim 0) != 1 (dim 0)
+TypeError: ufunc 'multiply' did not contain a loop with signature matching types dtype('<U10') dtype('<U10') dtype('<U10')
 
 
->>> lazy_matrix_mul([[3, 4], [6, 5]], "Meco")
+>>> lazy_matrix_mul([[5, 6], [7, 8]], "Holberton")
 Traceback (most recent call last):
-...
-TypeError: ufunc 'multiply' did not contain a loop with signature matching types dtype('<U4') dtype('<U4') dtype('<U4')
+TypeError: ufunc 'multiply' did not contain a loop with signature matching types dtype('<U9') dtype('<U9') dtype('<U9')
 
 
->>> lazy_matrix_mul([3, 4, 6, 5], [[8, 7]])
+>>> lazy_matrix_mul([[]], [[5, 6], [7, 8]])
 Traceback (most recent call last):
-...
-ValueError: shapes (4,) and (1,2) not aligned: 4 (dim 0) != 1 (dim 0)
+ValueError: shapes (1,0) and (2,2) not aligned: 0 (dim 1) != 2 (dim 0)
 
 
->>> lazy_matrix_mul([[3, 4.3, 6.5, 5]], ["Meco", 7])
+>>> lazy_matrix_mul([[5, 6], [7, 8]], [[]])
 Traceback (most recent call last):
-...
-ValueError: shapes (1,4) and (2,) not aligned: 4 (dim 1) != 2 (dim 0)
+ValueError: shapes (2,2) and (1,0) not aligned: 2 (dim 1) != 1 (dim 0)
 
->>> lazy_matrix_mul([[]], ["Meco", 7])
-Traceback (most recent call last):
-...
-ValueError: shapes (1,0) and (2,) not aligned: 0 (dim 1) != 2 (dim 0)
 
->>> lazy_matrix_mul([[3, 4.3, 6.5, 5]], [[]])
+>>> lazy_matrix_mul([[5, "6"], [7, 8]], [[5, 6], [7, 8]])
 Traceback (most recent call last):
-...
-ValueError: shapes (1,4) and (1,0) not aligned: 4 (dim 1) != 1 (dim 0)
+ValueError: data type must provide an itemsize
 
->>> lazy_matrix_mul([[3, -4.3], [-6.5, 5, -7]], [[4, 7]])
+>>> lazy_matrix_mul([[5, 6], [7, 8]], [[5, "6"], [7, 8]])
 Traceback (most recent call last):
-...
+ValueError: data type must provide an itemsize
+
+>>> lazy_matrix_mul([[5, 6, 10], [7, 8]], [[5, 6], [7, 8]])
+Traceback (most recent call last):
 ValueError: setting an array element with a sequence.
 
 
->>> lazy_matrix_mul([[3, 4.3], [6.5, 5]], [[6, 7], [3, "Meco"]])
+>>> lazy_matrix_mul([[5, 6], [7, 8]], [[5, 6, 1], [7, 8]])
 Traceback (most recent call last):
-...
-ValueError: data type must provide an itemsize
+ValueError: setting an array element with a sequence.
+
+>>> lazy_matrix_mul([[1, 2, 3], [3, 4, 5]], [[1, 2], [3, 4]])
+Traceback (most recent call last):
+ValueError: shapes (2,3) and (2,2) not aligned: 3 (dim 1) != 2 (dim 0)
+
+
+>>> lazy_matrix_mul([1])
+Traceback (most recent call last):
+TypeError: lazy_matrix_mul() missing 1 required positional argument: 'm_b'
+
+>>> lazy_matrix_mul()
+Traceback (most recent call last):
+TypeError: lazy_matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
+
+>>> lazy_matrix_mul([[1, 2], [3, 4], [3, 4]] [[5, 6, 1], [7, 8, 2]])
+Traceback (most recent call last):
+TypeError: list indices must be integers, not tuple
