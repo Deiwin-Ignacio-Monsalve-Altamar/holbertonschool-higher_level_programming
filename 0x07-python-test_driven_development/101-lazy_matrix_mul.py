@@ -13,4 +13,5 @@ def lazy_matrix_mul(m_a, m_b):
     M_a: matriz integer
     M_b: matriz integer
     """
-    return numpy.dot(m_a, m_b)
+    result_mul = numpy.matmul(m_a, m_b)
+    return result_mul
