@@ -9,4 +9,6 @@ def is_same_class(obj, a_class):
         obj {[type]} -- [description]
         a_class {[type]} -- [description]
     """
-    return type(obj) == a_class
+    if type(obj) == a_class:
+        return True
+    return False
