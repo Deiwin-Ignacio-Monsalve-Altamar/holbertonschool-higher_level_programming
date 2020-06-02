@@ -1,13 +1,9 @@
 #!/usr/bin/python3
-
-
-"""class empty
-"""
-
-
-class BaseGeometry(obj):
-    """
-    Arguments:
-        obj {[type]} -- [description]
+ 
+"""empty class"""
+ 
+ 
+class BaseGeometry:
+    """class BaseGeometry
     """
     pass
