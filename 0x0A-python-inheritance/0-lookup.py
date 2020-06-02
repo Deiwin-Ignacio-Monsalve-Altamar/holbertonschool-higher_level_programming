@@ -5,7 +5,6 @@
 """
 
 
-
 def lookup(obj):
     """
     Arguments:
