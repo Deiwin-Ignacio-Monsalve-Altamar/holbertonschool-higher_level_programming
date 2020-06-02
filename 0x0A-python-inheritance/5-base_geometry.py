@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 
 
-"class empty"
+"""class empty
+"""
 
 
 class BaseGeometry(obj):
