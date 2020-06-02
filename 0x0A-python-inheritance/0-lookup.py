@@ -11,4 +11,4 @@ def lookup(obj):
     Arguments:
         obj {[type]} -- [description]
     """
-    return dir(object)
+    return dir(obj)
