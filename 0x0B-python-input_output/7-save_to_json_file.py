@@ -1,8 +1,10 @@
 #!/usr/bin/python3
+
+
+"""Fuction save to json file"""
+
+
 import json
-
-
-"Fuction save to json file"
 
 
 def save_to_json_file(my_obj, filename):
