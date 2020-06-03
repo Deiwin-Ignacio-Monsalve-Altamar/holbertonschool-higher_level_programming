@@ -1,8 +1,8 @@
 #!/usr/bin/python3
+
+
 import json
 
-
-"Fuction convert json to string"
 
 
 def to_json_string(my_obj):
