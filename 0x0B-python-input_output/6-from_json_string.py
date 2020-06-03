@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 
 
+"""Module function"""
+
+
 import json
 
 
