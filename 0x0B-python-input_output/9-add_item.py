@@ -1,4 +1,10 @@
 #!/usr/bin/python3
+
+
+"""Add item module
+"""
+
+
 import json
 import sys
 
