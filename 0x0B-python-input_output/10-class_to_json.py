@@ -1,2 +1,14 @@
 #!/usr/bin/python3
-def append_after(filename="", search_string="", new_string=""):
+
+
+"Fuction return object dict"
+
+
+def class_to_json(obj):
+    """
+    Args:
+        obj ([type]): [description]
+    Returns:
+        obj : dictionary
+    """
+    return obj.__dict__
