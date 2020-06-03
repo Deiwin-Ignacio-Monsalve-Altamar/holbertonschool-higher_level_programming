@@ -2,7 +2,7 @@
 import json
 
 
-"Fuction convert string in Json"
+"""Fuction convert string in Json"""
 
 
 def from_json_string(my_str):
