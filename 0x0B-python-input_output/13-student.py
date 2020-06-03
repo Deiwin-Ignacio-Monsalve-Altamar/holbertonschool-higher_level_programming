@@ -30,7 +30,7 @@ class Students:
         myDict = {}
         for attr in attrs:
             if attr in self.__dict__:
-                myDict[attr] == __dict__[attr]
+                myDict[attr] = __dict__[attr]
         return myDict
 
     def reload_from_json(self, json):
