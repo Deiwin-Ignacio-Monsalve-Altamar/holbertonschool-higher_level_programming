@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 
 
-"class Students"
+"class function students"
 
 
-class Students:
-    """class students
+class Student:
+    """class studnets
     """
 
     def __init__(self, first_name, last_name, age):
@@ -26,12 +26,13 @@ class Students:
         """
         if attrs is None:
             return self.__dict__
-        
-        myDict = {}
-        for attr in attrs:
-            if attr in self.__dict__:
-                myDict[attr] = __dict__[attr]
-        return myDict
+
+        mylist = {}
+
+        for att in attrs:
+            if att in self.__dict__:
+                mylist[att] = self.__dict__[att]
+        return mylist
 
     def reload_from_json(self, json):
         """
