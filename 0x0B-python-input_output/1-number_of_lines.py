@@ -13,7 +13,4 @@ def number_of_lines(filename=""):
         int -- counters
     """
     with open(filename, encoding='utf-8') as f:
-        for i, letras in enumerate(f):
-            if i == 0:
-                return 0
-        return i + 1
+        return len(f.readlines)
