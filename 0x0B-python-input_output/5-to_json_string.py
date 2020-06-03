@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 
-"Function"
+"""Module containg funtion convert to json"""
 
 
 import json
