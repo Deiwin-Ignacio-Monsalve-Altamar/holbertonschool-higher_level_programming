@@ -112,3 +112,12 @@ class Rectangle(Base):
             print()
         for j in range(self.__heigth):
             print(self.__x * " " + self.__width * "#")
+
+    def __str__(self):
+        """
+        Returns:
+            [type]: [description]
+        """
+        return '[Rectangle] ({}) {}/{} - '\
+               '{}/{}'.format(self.id, self.__x, self.__y,
+                              self.__width, self.__heigth)
