@@ -144,8 +144,11 @@ class Rectangle(Base):
         for j in range(self.__height):
             print(self.__x * " " + self.__width * "#")
 
-    
     def to_dictionary(self):
+        """
+        Returns:
+            [type]: [description]
+        """
         return {
             'id': self.id,
             'width': self.width,
