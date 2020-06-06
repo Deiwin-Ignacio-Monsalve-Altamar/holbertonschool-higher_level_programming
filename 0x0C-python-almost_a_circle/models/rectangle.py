@@ -45,7 +45,7 @@ class Rectangle(Base):
         Returns:
             [int]: [integer asignement for width]
         """
-        return self.__heigth
+        return self.__height
 
     @height.setter
     def height(self, value):
@@ -143,6 +143,16 @@ class Rectangle(Base):
             print()
         for j in range(self.__height):
             print(self.__x * " " + self.__width * "#")
+
+    
+    def to_dictionary(self):
+        return {
+            'id': self.id,
+            'width': self.width,
+            'height': self.height,
+            'x': self.x,
+            'y': self.y
+        }
 
     def __str__(self):
         """
