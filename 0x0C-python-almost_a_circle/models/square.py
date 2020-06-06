@@ -16,6 +16,23 @@ class Square(Rectangle):
         """
         super().__init__(size, size, x, y, id)
 
+    @property
+    def size(self):
+        """
+        Returns:
+            [type]: [description]
+        """
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        """
+        Args:
+            value ([type]): [description]
+        """
+        self.width = value
+        self.height = value
+
     def __str__(self):
         return '[Square] ({}) {}/{} - {}'.format(self.id,
                                                  self.x, self.y, self.width)
