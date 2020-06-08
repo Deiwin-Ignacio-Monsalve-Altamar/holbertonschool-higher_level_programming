@@ -6,6 +6,10 @@ from models.rectangle import Rectangle
 from models.square import Square
 
 class TestBase(unittest.TestCase):
+    """
+    Args:
+        unittest ([type]): [description]
+    """
 
     def setUp(self):
         Base._Base__nb_objects = 0
