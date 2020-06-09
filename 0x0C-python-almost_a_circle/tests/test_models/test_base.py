@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Test program base"""
 
 import unittest
 from models.base import Base
