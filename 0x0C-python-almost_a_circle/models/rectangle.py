@@ -108,26 +108,26 @@ class Rectangle(Base):
                 if count == 1:
                     self.id = value
                 elif count == 2:
-                    self.__width = value
+                    self.width = value
                 elif count == 3:
-                    self.__height = value
+                    self.height = value
                 elif count == 4:
-                    self.__x = value
+                    self.x = value
                 elif count == 5:
-                    self.__y = value
+                    self.y = value
                 count += 1
         elif len(kwargs):
             for item, value in kwargs.items():
                 if item == 'id':
                     self.id = value
                 elif item == 'width':
-                    self.__width = value
+                    self.width = value
                 elif item == 'height':
-                    self.__height = value
+                    self.height = value
                 elif item == 'x':
-                    self.__x = value
+                    self.x = value
                 elif item == 'y':
-                    self.__y = value
+                    self.y = value
 
     def area(self):
         """
