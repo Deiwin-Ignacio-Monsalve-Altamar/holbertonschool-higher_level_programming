@@ -5,6 +5,7 @@ import unittest
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
+import pep8
 
 
 class TestBase(unittest.TestCase):
@@ -90,6 +91,13 @@ class TestBase(unittest.TestCase):
         self.assertEqual(test_string, "[Square] (1) 3/0 - 5")
         self.assertEqual(r1 is r2, False)
         self.assertEqual(r1 == r2, False)
+
+    def test_style_base(self):
+        """test pep8
+        """
+        style = pep8.StyleGuide()
+        m = style.check_files(["models/base.py"])
+        self.assertEqual(m.total_errors, 0, "fix pep8")
 
 
 if __name__ == '__main__':

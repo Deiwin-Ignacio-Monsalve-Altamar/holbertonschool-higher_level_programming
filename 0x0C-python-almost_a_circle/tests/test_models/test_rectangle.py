@@ -8,6 +8,7 @@ from models.square import Square
 from io import StringIO
 import io
 import sys
+import pep8
 
 
 class TestRectangle(unittest.TestCase):
@@ -121,6 +122,13 @@ class TestRectangle(unittest.TestCase):
         r2 = Rectangle(1, 1)
         r2.update(**r1_dictionary)
         self.assertEqual(r1 == r2, False)
+
+    def test_style_base(self):
+        """test pep8
+        """
+        style = pep8.StyleGuide()
+        m = style.check_files(["models/rectangle.py"])
+        self.assertEqual(m.total_errors, 0, "fix pep8")
 
 
 if __name__ == '__main__':
