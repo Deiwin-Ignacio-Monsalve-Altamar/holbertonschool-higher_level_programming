@@ -8,6 +8,7 @@ from io import StringIO
 import io
 import sys
 
+
 class TestRectangle(unittest.TestCase):
 
     def setUp(self):
@@ -23,7 +24,7 @@ class TestRectangle(unittest.TestCase):
     def test_rect_id(self):
         r2 = Rectangle(4, 3, 4, 1, 35)
         self.assertEqual(r2.id, 35)
-    
+
     def test_rectangle(self):
         r4 = Rectangle(3, 5, 6, 8, 10)
         self.assertEqual(r4.width, 3)
@@ -31,13 +32,13 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r4.x, 6)
         self.assertEqual(r4.y, 8)
         self.assertEqual(r4.id, 10)
-    
+
     def test_rectangle_valid_type_error(self):
         self.assertRaises(TypeError, Rectangle, "Deiwin", 1)
         self.assertRaises(TypeError, Rectangle, 1, "Deiwin")
         self.assertRaises(TypeError, Rectangle, [1], 2)
         self.assertRaises(TypeError, Rectangle, 1.1, 1)
-        self.assertRaises(TypeError, Rectangle, (1, ) , 1)
+        self.assertRaises(TypeError, Rectangle, (1, ), 1)
         self.assertRaises(TypeError, Rectangle, 1.1, 1, 1, 1)
 
     def test_rectangle_valid_value_error(self):
@@ -85,13 +86,13 @@ class TestRectangle(unittest.TestCase):
         self.assertRaises(ValueError, r11.update, 89, -1, 1)
         self.assertRaises(ValueError, r11.update, 89, 1, -1)
         self.assertRaises(ValueError, r11.update, 89, 1, 1, -1)
-    
+
     def test_update_kwargs(self):
         r1 = Rectangle(10, 10, 10, 10)
 
         r1.update(height=1)
         self.assertEqual(r1.height, 1)
-    
+
         r1.update(width=1, x=2)
         self.assertEqual(r1.width, 1)
         self.assertEqual(r1.x, 2)
@@ -115,7 +116,11 @@ class TestRectangle(unittest.TestCase):
         r1_dictionary = r1.to_dictionary()
         dic_comparation = {'x': 1, 'y': 9, 'id': 1, 'height': 2, 'width': 10}
         self.assertEqual(r1_dictionary, dic_comparation)
-        
+
         r2 = Rectangle(1, 1)
         r2.update(**r1_dictionary)
         self.assertEqual(r1 == r2, False)
+
+
+if __name__ == '__main__':
+    unittest.main()

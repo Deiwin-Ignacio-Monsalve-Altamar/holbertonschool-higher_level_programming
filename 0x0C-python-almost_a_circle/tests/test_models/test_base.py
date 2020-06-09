@@ -5,6 +5,7 @@ from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
 
+
 class TestBase(unittest.TestCase):
     """
     Args:
@@ -41,7 +42,7 @@ class TestBase(unittest.TestCase):
         none_dic = Base.to_json_string(None)
         self.assertIsInstance(none_dic, list)
         self.assertEqual(none_dic, [])
-    
+
         list_test = Base.from_json_string(json_dictionary)
         self.assertIsInstance(list_test, list)
         self.assertEqual(list_test[0]['width'], dictionary['width'])
@@ -63,7 +64,7 @@ class TestBase(unittest.TestCase):
         none_dic = Base.to_json_string(None)
         self.assertIsInstance(none_dic, list)
         self.assertEqual(none_dic, [])
-    
+
         list_test = Base.from_json_string(json_dictionary)
         self.assertIsInstance(list_test, list)
         self.assertEqual(list_test[0]['size'], dictionary['size'])
@@ -90,3 +91,7 @@ class TestBase(unittest.TestCase):
         self.assertEqual(test_string, "[Square] (1) 3/0 - 5")
         self.assertEqual(r1 is r2, False)
         self.assertEqual(r1 == r2, False)
+
+
+if __name__ == '__main__':
+    unittest.main()

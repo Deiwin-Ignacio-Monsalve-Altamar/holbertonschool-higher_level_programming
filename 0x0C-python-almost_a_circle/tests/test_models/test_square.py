@@ -8,6 +8,7 @@ from io import StringIO
 import io
 import sys
 
+
 class TestSquare(unittest.TestCase):
 
     def setUp(self):
@@ -20,7 +21,7 @@ class TestSquare(unittest.TestCase):
     def test_square_id(self):
         s2 = Square(3)
         self.assertEqual(s2.id, 1)
-    
+
     def test_square_width_and_heigth(self):
         s2 = Square(3)
         self.assertEqual(s2.width, 3)
@@ -34,7 +35,7 @@ class TestSquare(unittest.TestCase):
     def validation_type_or_value(self):
         self.assertRaises(TypeError, Square, 1, "Holberton")
         self.assertRaises(TypeError, Square, (1, ), 1)
-        self.assertRaises(TypeError, Square, [1], 1)        
+        self.assertRaises(TypeError, Square, [1], 1)
         self.assertRaises(ValueError, Square, 1, -1)
         self.assertRaises(ValueError, Square, -1, 1)
         self.assertRaises(ValueError, Square, 3.5, 5)
@@ -74,13 +75,13 @@ class TestSquare(unittest.TestCase):
         self.assertRaises(ValueError, s11.update, 89, -1, 1)
         self.assertRaises(ValueError, s11.update, 89, 1, -1)
         self.assertRaises(ValueError, s11.update, 89, 1, 1, -1)
-    
+
     def test_update_kwargs(self):
         r1 = Square(10, 10, 10)
 
         r1.update(size=1)
         self.assertEqual(r1.size, 1)
-    
+
         r1.update(size=1, x=2)
         self.assertEqual(r1.size, 1)
         self.assertEqual(r1.x, 2)
@@ -100,9 +101,13 @@ class TestSquare(unittest.TestCase):
     def test_to_dict(self):
         s1 = Square(10, 1, 9)
         s1_dictionary = s1.to_dictionary()
-        dic_comparation = {'x': 1, 'y': 9, 'id': 1, 'size':10}
+        dic_comparation = {'x': 1, 'y': 9, 'id': 1, 'size': 10}
         self.assertEqual(s1_dictionary, dic_comparation)
-        
+
         s2 = Rectangle(1, 1)
         s2.update(**s1_dictionary)
         self.assertEqual(s1 == s2, False)
+
+
+if __name__ == '__main__':
+    unittest.main()
