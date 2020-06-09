@@ -76,19 +76,19 @@ class Base:
     def load_from_file(cls):
         """
         Returns:
-            [type]: [description]
+            [list]: [containg asignement in dict]
         """
-        filename = cls.__name__ + ".json"
         list_new = []
         try:
-            with open(filename, mode="r", encoding="UTF-8") as f:
+            with open(cls.__name__ + ".json", mode="r", encoding="UTF-8") as f:
                 json_string = f.read()
                 new_string = cls.from_json_string(json_string)
-                for item in new_string:
-                    if isinstance(item, dict) is True:
-                        list_new.append(cls.create(**item))
-                    else:
-                        list_new.append(item)
+
+            for item in new_string:
+                if type(item) == dict:
+                    list_new.append(cls.create(**item))
+                else:
+                    list_new.append(item)
             return list_new
-        except:
-            []
+        except Exception:
+            return []
