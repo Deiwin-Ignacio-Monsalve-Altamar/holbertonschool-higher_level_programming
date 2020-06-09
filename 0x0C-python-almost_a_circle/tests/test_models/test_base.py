@@ -40,8 +40,7 @@ class TestBase(unittest.TestCase):
         self.assertEqual(empty_dictionary, '[]')
 
         none_dic = Base.to_json_string(None)
-        self.assertIsInstance(none_dic, list)
-        self.assertEqual(none_dic, [])
+        self.assertEqual(none_dic, "[]")
 
         list_test = Base.from_json_string(json_dictionary)
         self.assertIsInstance(list_test, list)
@@ -62,8 +61,7 @@ class TestBase(unittest.TestCase):
         self.assertEqual(empty_dictionary, '[]')
 
         none_dic = Base.to_json_string(None)
-        self.assertIsInstance(none_dic, list)
-        self.assertEqual(none_dic, [])
+        self.assertEqual(none_dic, "[]")
 
         list_test = Base.from_json_string(json_dictionary)
         self.assertIsInstance(list_test, list)
