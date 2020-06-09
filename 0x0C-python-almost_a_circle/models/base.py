@@ -80,12 +80,15 @@ class Base:
         """
         filename = cls.__name__ + ".json"
         list_new = []
-        with open(filename, mode="r", encoding="UTF-8") as f:
-            json_string = f.read()
-            new_string = cls.from_json_string(json_string)
-            for item in new_string:
-                if isinstance(item, dict) is True:
-                    list_new.append(cls.create(**item))
-                else:
-                    list_new.append(item)
-        return list_new
+        try:
+            with open(filename, mode="r", encoding="UTF-8") as f:
+                json_string = f.read()
+                new_string = cls.from_json_string(json_string)
+                for item in new_string:
+                    if isinstance(item, dict) is True:
+                        list_new.append(cls.create(**item))
+                    else:
+                        list_new.append(item)
+            return list_new
+        except:
+            []
