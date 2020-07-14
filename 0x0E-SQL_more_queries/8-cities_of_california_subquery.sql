@@ -3,7 +3,7 @@ SELECT
     id,
     name
 FROM
-    hbtn_0d_usa.cities
+    cities
 WHERE
     state_id = (
         SELECT
@@ -12,4 +12,6 @@ WHERE
             states
         WHERE
             name = "California"
-    );
+    )
+ORDER BY
+    id ASC;
