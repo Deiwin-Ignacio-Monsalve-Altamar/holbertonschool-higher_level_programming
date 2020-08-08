@@ -8,8 +8,6 @@ from sys import argv
 if __name__ == '__main__':
     """COnect
     """
-    getallstates()
-
     db = MySQLdb.connect('localhost', argv[1], argv[2], argv[3], port=3306)
     cur = db.cursor()
 
@@ -17,5 +15,4 @@ if __name__ == '__main__':
     for row in cur.fetchall():
         print(row)
 
-    cur.close()
     db.close()
