@@ -1,9 +1,13 @@
 #!/usr/bin/python3
+"""Write a script that takes 
+"""
 import MySQLdb
 import sys
 
 
 def allCitiesState():
+    """takes in the name of a state
+    """
     db = MySQLdb.connect(port=3306, user=sys.argv[1],
                          passwd=sys.argv[2], db=sys.argv[3])
     cur = db.cursor()
