@@ -2,14 +2,15 @@
 """Exercise
 """
 import MySQLdb
-import sys
+from sys import argv
 
 
-def getallstates():
+if __name__ == '__main__':
     """COnect
     """
-    db = MySQLdb.connect(host='localhost', user=sys.argv[1],
-                         passwd=sys.argv[2], db=sys.argv[3], port=3306)
+    getallstates()
+
+    db = MySQLdb.connect('localhost', argv[1], argv[2], argv[3], port=3306)
     cur = db.cursor()
 
     cur.execute('SELECT * FROM states ORDER BY id ASC')
@@ -18,7 +19,3 @@ def getallstates():
 
     cur.close()
     db.close()
-
-
-if __name__ == '__main__':
-    getallstates()
