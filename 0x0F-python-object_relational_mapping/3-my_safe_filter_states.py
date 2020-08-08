@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""do you remember the previous task? 
+"""do you remember the previous task?
 """
 import MySQLdb
 import sys
