@@ -15,7 +15,8 @@ def filterStates():
     cur.execute('SELECT * FROM states WHERE name LIKE "N%" ORDER BY id ASC')
     dataRow = cur.fetchall()
     for row in dataRow:
-        print(row)
+        if row[1][0] == 'N':
+            print(row)
 
     db.close()
 
