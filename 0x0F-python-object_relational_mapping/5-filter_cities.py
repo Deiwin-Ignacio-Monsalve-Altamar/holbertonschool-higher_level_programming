@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Write a script that takes 
+"""Write a script that takes
 """
 import MySQLdb
 import sys
