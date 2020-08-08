@@ -18,7 +18,6 @@ def filterStates():
         print(row)
 
     db.close()
-    cur.close()
 
 
 if __name__ == '__main__':
