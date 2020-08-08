@@ -16,7 +16,8 @@ def filterStatesInput():
                 ORDER BY id ASC'.format(sys.argv[4]))
     dataRow = cur.fetchall()
     for row in dataRow:
-        print(row)
+        if row[1] == sys.argv[4]
+            print(row)
 
     db.close()
     cur.close()
