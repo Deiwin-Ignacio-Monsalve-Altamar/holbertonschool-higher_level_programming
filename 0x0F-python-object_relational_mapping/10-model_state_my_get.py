@@ -25,7 +25,7 @@ def getState():
         State.name == sys.argv[4]).order_by(State.id).first()
 
     if states:
-        print("{}".format(state.id))
+        print("{}".format(states.id))
     else:
         print("Not found")
     session.close()
