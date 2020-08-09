@@ -23,7 +23,7 @@ def getState():
 
     new_states = State(name='Louisiana')
     session.add(new_states)
-    
+
     for state in session.query(State).order_by(State.id).all():
         if state.name == "Louisiana":
             print("{}".format(state.id))
