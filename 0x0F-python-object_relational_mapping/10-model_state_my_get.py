@@ -21,10 +21,11 @@ def getState():
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    states = session.query(State).filter(State.name == sys.argv[4]).order_by(State.id).all()
-    for state in states:
-        if state:
-            print("{}".format(state.id))
+    states = session.query(State).filter(
+        State.name == sys.argv[4]).order_by(State.id).first()
+
+    if states:
+        print("{}".format(state.id))
     else:
         print("Not found")
     session.close()
