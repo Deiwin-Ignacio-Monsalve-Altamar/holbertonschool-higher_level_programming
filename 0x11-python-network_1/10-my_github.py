@@ -6,7 +6,7 @@ import sys
 
 def my_github(url, users, password):
     """takes your Github credential"""
-    
+
     r = requests.get(url, auth=(users, password))
     dict_json = r.json()
     print(dict_json.get('id'))
