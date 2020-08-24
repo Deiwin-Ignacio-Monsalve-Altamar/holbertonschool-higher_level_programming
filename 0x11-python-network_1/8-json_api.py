@@ -16,7 +16,7 @@ def search_api(url, q):
         else:
             print("No result")
     except Exception:
-        print("Not valide JSON")
+        print("Not a valid JSON")
 
 
 if __name__ == '__main__':
