@@ -7,7 +7,7 @@ import sys
 def responseValue(url):
     """sends a request to the URL"""
     r = requests.get(url)
-    print("{}".format(r.headers['X-Request-Id']))
+    print("{}".format(r.headers.get('X-Request-Id')))
 
 
 if __name__ == '__main__':
