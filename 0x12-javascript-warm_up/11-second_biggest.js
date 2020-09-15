@@ -10,7 +10,6 @@ if (args.length <= 3) {
 }
 
 function secondBiggest (list) {
-  const max = list.sort();
-  Math.max.apply(null, max);
+  const max = list.sort((a, b) => a - b);
   return max[max.length - 2];
 }
