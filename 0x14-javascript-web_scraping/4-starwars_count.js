@@ -11,7 +11,7 @@ if (process.argv[2] !== undefined) {
       for (let index = 0; index < result.length; index++) {
         const character = result[index].characters;
         for (let i = 0; i < character.length; i++) {
-          if (character[i] === 'https://swapi-api.hbtn.io/api/people/18/') {
+          if (character[i].includes('18')) {
             count++;
           }
         }
