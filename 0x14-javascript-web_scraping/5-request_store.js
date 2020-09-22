@@ -1,5 +1,5 @@
 #!/usr/bin/node
-/*  */
+/* script that gets the contents of a webpage and stores it in a file. */
 const request = require('request');
 request(process.argv[2], (error, response, body) => {
   if (error) {
@@ -7,7 +7,7 @@ request(process.argv[2], (error, response, body) => {
   } else if (response.statusCode === 200) {
     let contents = body;
     let fs = require('fs');
-    fs.writeFile(process.argv[2], contents, 'utf-8', (err) =>{
+    fs.writeFile(process.argv[3], contents, 'utf-8', (err) =>{
         if(err){
             console.log(err)
         }
